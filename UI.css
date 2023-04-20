@@ -3,12 +3,17 @@ body{
     margin: 0;
 }
 
-h1{
+h1 {
+    height: 10vh;
+    margin: 0;
+    background-color: moccasin;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    background-color: beige;
-    margin: 0;
-}
+  }
 
 .container {
     display: flex;
@@ -28,9 +33,10 @@ input {
     width: 300px;
     max-width: 100%;
     margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.button {
+.submitButton {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -44,6 +50,26 @@ input {
 
 .shopping {
     overflow:auto;
-    height:400px;
+    height:80vh;
     background-color: purple;
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 6px;
+}
+
+/* Style the scrollbar thumb when hovering over it */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
 }
