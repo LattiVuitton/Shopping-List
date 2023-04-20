@@ -1,18 +1,21 @@
-function startTime() {
-	var startDate = new Date();
-	setInterval(function() {
-		var currentDate = new Date();
-		var elapsedTime = currentDate.getTime() - startDate.getTime();
-		var seconds = Math.floor((elapsedTime / 1000) % 60);
-		var minutes = Math.floor((elapsedTime / 1000 / 60) % 60);
-		var hours = Math.floor((elapsedTime / 1000 / 60 / 60) % 24);
-		var days = Math.floor(elapsedTime / 1000 / 60 / 60 / 24);
-
-		var timer = document.getElementById('timer');
-		timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-	}, 1000);
-}
+var itemText = document.getElementById("itemText");
 
 function createItem() {
-    
+    const itemsList = document.getElementById("items");
+
+    let text = itemText.value;
+
+    const newP = document.createElement('p');
+    newP.innerHTML = text + "";
+    itemsList.append(newP);
+
+    itemText.value = ""
 }
+
+
+
+itemText.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+        createItem();
+    }
+});
