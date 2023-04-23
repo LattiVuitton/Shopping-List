@@ -1,6 +1,7 @@
 body{
-    background-color:rgb(239, 231, 221);
+    background-color:rgb(249, 232, 221);
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 p {
@@ -11,10 +12,10 @@ p {
     text-align: left;
     align-items: center;
     vertical-align: middle;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
+    font-family: 'Courier New', Courier, monospace;
     height: 10vh;
     width: 100vw;
     margin: 0;
@@ -22,7 +23,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .footer{
@@ -33,7 +33,6 @@ h1 {
     color: black;
     display: flex;
     justify-content: left;
-    font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
 }
 
@@ -46,6 +45,7 @@ h1 {
     width: 90vw;
     margin-left: 5vw;
     align-content: center;
+
 }
 
 input {
@@ -53,10 +53,13 @@ input {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 6px #ccc;
+    background-color: white;
+
     width: 250px;
     max-width: 100%;
     font-family: 'Courier New', Courier, monospace;
+
 }
 
 .clearButton {
@@ -64,8 +67,8 @@ input {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: whitesmoke;
-    box-shadow: 0 0 5px #ccc;
+    background-color: white;
+    box-shadow: 0 0 6px #ccc;
     width: 90px;
     max-width: 100%;
     margin-left: 10px;
@@ -73,16 +76,16 @@ input {
 }
 
 .addButton {
-    background-color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
     padding: 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 6px #ccc;
     width: 70px;
     max-width: 100%;
     margin-left: 10px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .shopping {
@@ -120,8 +123,9 @@ input {
     left: 10px;
     z-index: 2;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    color: black;
+    background-color: #00000000;
+    font-size: x-large;
     border: none;
     cursor: pointer;
   }
@@ -130,6 +134,7 @@ input {
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
+    font-family: 'Courier New', Courier, monospace;
     width: 0;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -153,10 +158,9 @@ input {
   /* The navigation links inside the overlay */
   .overlay a {
     padding: 8px;
-    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
     font-size: 36px;
-    color: #818181;
+    color: rgb(249, 232, 221);
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
   }

@@ -66,6 +66,7 @@ function open()
         screenWidth = screen.width
     }
     
+    document.getElementById("settings").style.color = 'rgb(249, 232, 221)';
     document.getElementById("myNav").style.width = screenWidth + "px";;
     document.getElementById("downloadText").style.color = defaultColor
 }
@@ -74,6 +75,8 @@ var defaultColor = document.getElementById("downloadText").style.color;
 document.getElementById("downloadText").style = "color: #00000000;"
 
 function close() {
+    document.getElementById("settings").style.color = 'black';
+
     defaultColor = document.getElementById("downloadText").style.color;
     document.getElementById("downloadText").style = "color: #00000000;"
     document.getElementById("myNav").style.width = "0%";
