@@ -5,8 +5,10 @@ body{
 }
 
 p {
-    margin: 0;
-    height: 5vh;
+    word-wrap: break-word;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 80vw;
     font-size: larger;
     display: flex;
     text-align: left;
