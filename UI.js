@@ -21,6 +21,15 @@ class Item {
     }
 }
 
+function isValidFood(food) {
+    for (let i = 0; i < food.length; i++){
+        if (food[i] != " ") {
+            return true;
+        }
+    }
+    return false;
+}
+
 function clear() {
     document.querySelectorAll('.ingredient').forEach(e => e.remove());
     items = []
@@ -31,7 +40,7 @@ function createItem() {
 
     let text = itemText.value;
 
-    if (text.length > 0) {
+    if (isValidFood(text)) {
         const newItem = new Item(text);
         items.push(newItem);
     
@@ -43,6 +52,10 @@ function createItem() {
 
         itemText.value = ""
         document.getElementById("add2down").innerHTML = ""
+    }
+
+    else {
+        itemText.value = ""
     }
 }
 
