@@ -145,11 +145,16 @@ addButton.addEventListener("click", function () {
 })
 
 itemText.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {
+    if (e.code === "Enter" || e.keyCode === 13 || e.which === 13) {
         createItem();
     }
 });
 
+itemText.addEventListener("keypress", function (e) {
+    if (e.code === "Enter" || e.keyCode === 13 || e.which === 13) {
+        createItem();
+    }
+});
 clearButton.addEventListener("click", function () {
     clear()
 })
