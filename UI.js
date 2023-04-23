@@ -158,6 +158,44 @@ function download() {
     }
 }
 
+function swipeLeft() {
+    if (panelOpen){
+        slidePanel();
+    }
+}
+
+let xDown = null;
+let yDown = null;
+
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+function handleTouchStart(event) {
+  xDown = event.touches[0].clientX;
+  yDown = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  let xUp = event.touches[0].clientX;
+  let yUp = event.touches[0].clientY;
+
+  let xDiff = xDown - xUp;
+  let yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 5) {
+        swipeLeft();
+    }
+  }
+
+  xDown = null;
+  yDown = null;
+}
+
 downloadButton.addEventListener("click", function () {
     download();
 })
