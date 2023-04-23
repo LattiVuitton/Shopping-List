@@ -1,12 +1,13 @@
+const SETTINGS_WIDTH = 500;
+
 const itemText = document.getElementById("itemText");
 const clearButton = document.getElementById("clear");
 const addButton = document.getElementById("add");
 const settingsButton = document.getElementById("settings");
 const downloadButton = document.getElementById("downloadText");
+const fScreenButton = document.getElementById("fscreen");
 
 var downloadCount = 1;
-
-const SETTINGS_WIDTH = 500;
 
 var items = []
 var itemElements = []
@@ -44,41 +45,43 @@ function createItem() {
         scroller.scrollTop = scroller.scrollHeight;
 
         itemText.value = ""
-    }   
-}
+        document.getElementById("add2down").innerHTML = ""
 
-
-
-itemText.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {
-        createItem();
     }
-});
 
-clearButton.addEventListener("click", function () {
-    clear()
-})
+}
 
 function open()
 {
+    document.getElementById("fscreen").style = 'pointer-events: all;';
+
+    console.log(items.length)
+    if (items.length == 0) {
+        document.getElementById("add2down").innerHTML = "No items added"
+    }
+    
     let screenWidth = SETTINGS_WIDTH;
     if (screen.width < SETTINGS_WIDTH + 200) {
         screenWidth = screen.width
     }
     
     document.getElementById("settings").style.color = 'rgb(249, 232, 221)';
-    document.getElementById("myNav").style.width = screenWidth + "px";;
-    document.getElementById("downloadText").style.color = defaultColor
+    document.getElementById("myNav").style.width = screenWidth + "px";
+    document.getElementById("downloadText").style.color = defaultColor;
+    document.getElementById("add2down").style.color = defaultColor;
 }
 
 var defaultColor = document.getElementById("downloadText").style.color;
 document.getElementById("downloadText").style = "color: #00000000;"
+document.getElementById("add2down").style = "color: #00000000;"
 
 function close() {
+    document.getElementById("fscreen").style = 'pointer-events: none;';
     document.getElementById("settings").style.color = 'black';
 
     defaultColor = document.getElementById("downloadText").style.color;
     document.getElementById("downloadText").style = "color: #00000000;"
+    document.getElementById("add2down").style = "color: #00000000;"
     document.getElementById("myNav").style.width = "0%";
     // setTimeout('document.getElementById("downloadText").style.color = defaultColor', 500);
     // document.getElementById("downloadText").style.color = defaultColor;
@@ -93,10 +96,6 @@ function slidePanel() {
     }
     panelOpen = !panelOpen;
 }
-
-settingsButton.addEventListener("click", function () {
-    slidePanel();
-})
 
 function download() {
 
@@ -137,7 +136,8 @@ function download() {
     }
 
     else {
-        console.log("No items");
+        document.getElementById("add2down").style.color = 'rgb(199, 64, 64)';
+        setTimeout('document.getElementById("add2down").style.color = "white"', 400)
     }
 }
 
@@ -147,4 +147,22 @@ downloadButton.addEventListener("click", function () {
 
 addButton.addEventListener("click", function () {
     createItem();
+})
+
+itemText.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {
+        createItem();
+    }
+});
+
+clearButton.addEventListener("click", function () {
+    clear()
+})
+
+settingsButton.addEventListener("click", function () {
+    slidePanel();
+})
+
+fScreenButton.addEventListener("click", function () {
+    slidePanel();
 })
