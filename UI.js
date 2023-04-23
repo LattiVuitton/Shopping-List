@@ -42,7 +42,7 @@ function createItem() {
 
     if (isValidFood(text)) {
         const newItem = new Item(text);
-        items.push(newItem);
+        items.unshift(newItem);
     
         const newP = document.createElement('p');
         newP.innerHTML = text + "";
@@ -131,10 +131,20 @@ function download() {
         doc.setFontSize(12);
         doc.setFont('courier', 'normal');
 
-        doc.lineHeight = 1.0;
+        doc.lineHeight = 0.5;
+        let startY = 45; // Initial y position
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
-            doc.text(item.name, 20, 45 + (i * 7));
+            // Check if the text will overflow to the next page
+            const pageHeight = doc.internal.pageSize.height;
+            const lineHeight = doc.getLineHeight();
+            const textHeight = lineHeight * doc.splitTextToSize(item.name, doc.internal.pageSize.width - 40).length;
+            if (startY + textHeight > pageHeight - 20) {
+                doc.addPage(); // Add a new page if the text will overflow
+                startY = 45; // Reset the y position
+            }
+            doc.text(item.name, 20, startY);
+            startY += textHeight - 5; // Add some padding between lines
         }
 
         // Downloading
