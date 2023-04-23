@@ -5,6 +5,8 @@ const settingsButton = document.getElementById("settings");
 var items = []
 var itemElements = []
 
+var panelOpen = false;
+
 class Item {
     constructor(name) {
         this.name = name;
@@ -47,11 +49,35 @@ clearButton.addEventListener("click", function () {
     clear()
 })
 
+function open()
+{
+    document.getElementById("myNav").style.width = "300px";
+}
+
+var defaultColor = document.getElementById("downloadText").style.color;
+
+function close() {
+    defaultColor = document.getElementById("downloadText").style.color;
+    document.getElementById("downloadText").style = "color: #00000000;"
+    document.getElementById("myNav").style.width = "0%";
+    setTimeout('document.getElementById("downloadText").style.color = defaultColor', 500);
+    // document.getElementById("downloadText").style.color = defaultColor;
+}
 
 function slidePanel() {
-    console.log("Sliding")
+    if (panelOpen) {
+        close()
+    }
+    else {
+        open()
+    }
+    panelOpen = !panelOpen;
 }
 
 settingsButton.addEventListener("click", function () {
     slidePanel();
 })
+
+function download() {
+    console.log("Downloading");
+}
