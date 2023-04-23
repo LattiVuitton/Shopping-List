@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(111, 98, 98);
+    background-color:antiquewhite;
     margin: 0;
 }
 
@@ -16,23 +16,36 @@ p {
 
 h1 {
     height: 10vh;
+    width: 100vw;
     margin: 0;
-    background-color: moccasin;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
-  }
+}
+
+.footer{
+    height: 5vh;
+    width: 98vw;
+    margin-left: 2vw;
+    color: black;
+    display: flex;
+    justify-content: left;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+}
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     height: 10vh;
-    /* background-color: orange; */
+    width: 90vw;
+    margin-left: 5vw;
+    align-content: center;
 }
-
 
 input {
     padding: 10px;
@@ -40,35 +53,44 @@ input {
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
-    width: 300px;
+    width: 250px;
     max-width: 100%;
-    margin-bottom: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .clearButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
-    background-color: #ccc;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #ccc;
+    width: 90px;
+    max-width: 100%;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.addButton {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    width: 70px;
+    max-width: 100%;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .shopping {
     overflow:auto;
-    height:70vh;
-    width: 100vw;
-    margin-left: 0vw;
-    /* background-color: purple; */
+    height:75vh;
+    width: 90vw;
+    margin-left: 10vw;
 }
 
-/* Hide the default scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -87,6 +109,8 @@ input {
 }
 
 .settings-button {
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -125,6 +149,7 @@ input {
   /* The navigation links inside the overlay */
   .overlay a {
     padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
     font-size: 36px;
     color: #818181;
