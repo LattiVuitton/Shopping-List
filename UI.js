@@ -4,6 +4,7 @@ const itemText = document.getElementById("itemText");
 const clearButton = document.getElementById("clear");
 const addButton = document.getElementById("add");
 const settingsButton = document.getElementById("settings");
+const settingsHolder = document.getElementById("settings-holder");
 const downloadButton = document.getElementById("downloadText");
 const fScreenButton = document.getElementById("fscreen");
 
@@ -162,6 +163,10 @@ clearButton.addEventListener("click", function () {
 })
 
 settingsButton.addEventListener("click", function () {
+    slidePanel();
+})
+
+settingsHolder.addEventListener("click", function () {
     slidePanel();
 })
 
