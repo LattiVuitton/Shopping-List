@@ -39,11 +39,7 @@ function createItem() {
         newP.innerHTML = text + "";
         newP.className = "ingredient"
 
-
         itemsList.prepend(newP);
-        
-        var scroller = document.getElementById("items");
-        scroller.scrollTop = scroller.scrollHeight;
 
         itemText.value = ""
         document.getElementById("add2down").innerHTML = ""
