@@ -1,5 +1,5 @@
 body{
-    background-color:dimgrey;
+    background-color:rgb(111, 98, 98);
     margin: 0;
 }
 
@@ -56,9 +56,9 @@ input {
 
 .shopping {
     overflow:auto;
-    height:80vh;
-    width: 70vw;
-    margin-left: 15vw;
+    height:70vh;
+    width: 100vw;
+    margin-left: 0vw;
     /* background-color: purple; */
 }
 
