@@ -27,8 +27,9 @@ h1 {
 
 .footer{
     height: 5vh;
-    width: 98vw;
-    margin-left: 2vw;
+    width: 97vw;
+    margin-left: 3vh;
+    margin-top: 3vh;
     color: black;
     display: flex;
     justify-content: left;
@@ -41,7 +42,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 10vh;
+    height: 5vh;
     width: 90vw;
     margin-left: 5vw;
     align-content: center;
@@ -87,6 +88,7 @@ input {
     height:75vh;
     width: 90vw;
     margin-left: 10vw;
+    margin-top: 2vh;
 }
 
 ::-webkit-scrollbar {

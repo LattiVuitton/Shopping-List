@@ -39,7 +39,10 @@ function createItem() {
         newP.innerHTML = text + "";
         newP.className = "ingredient"
         itemsList.append(newP);
-    
+        
+        var scroller = document.getElementById("items");
+        scroller.scrollTop = scroller.scrollHeight;
+
         itemText.value = ""
     }   
 }
