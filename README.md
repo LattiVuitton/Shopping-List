@@ -1,4 +1,4 @@
-##Shopping List Maker##
+## Shopping List Maker
 
 Check it out here: https://lattivuitton.github.io/Shopping-List/
 
