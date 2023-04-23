@@ -59,10 +59,11 @@ h2{
 }
 
 input {
+    border-radius: 9px;
+
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     box-shadow: 0 0 6px #ccc;
     background-color: white;
 
@@ -162,7 +163,6 @@ right: 45px;
 font-size: 60px;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
@@ -203,9 +203,9 @@ vertical-align: middle;
 
 .clearButton {
     padding: 10px;
+    border-radius: 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     background-color: white;
     box-shadow: 0 0 6px #ccc;
     width: 90px;
@@ -214,15 +214,7 @@ vertical-align: middle;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.addButton {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 6px #ccc;
-    width: 70px;
-    max-width: 100%;
-    margin-left: 10px;
-}
+.clearButton:hover {
+    background-color: #f2f2f2; /* Change the background color on hover */
+    box-shadow: 0 0 8px #ccc; /* Change the box shadow on hover */
+  }

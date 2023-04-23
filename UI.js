@@ -21,7 +21,6 @@ class Item {
 }
 
 function clear() {
-    console.log("Clearing")
     document.querySelectorAll('.ingredient').forEach(e => e.remove());
     items = []
 }
@@ -34,7 +33,6 @@ function createItem() {
     if (text.length > 0) {
         const newItem = new Item(text);
         items.push(newItem);
-        console.log(items)
     
         const newP = document.createElement('p');
         newP.innerHTML = text + "";
@@ -46,27 +44,27 @@ function createItem() {
 
         itemText.value = ""
         document.getElementById("add2down").innerHTML = ""
-
     }
-
 }
 
 function open()
 {
     document.getElementById("fscreen").style = 'pointer-events: all;';
 
-    console.log(items.length)
     if (items.length == 0) {
         document.getElementById("add2down").innerHTML = "No items added"
     }
     
     let screenWidth = SETTINGS_WIDTH;
-    if (screen.width < SETTINGS_WIDTH + 200) {
-        screenWidth = screen.width
+    if (screen.width < (SETTINGS_WIDTH * 2)) {
+        document.getElementById("myNav").style.width = '100%';
+    }
+    
+    else {
+        document.getElementById("myNav").style.width = screenWidth + "px";
     }
     
     document.getElementById("settings").style.color = 'rgb(249, 232, 221)';
-    document.getElementById("myNav").style.width = screenWidth + "px";
     document.getElementById("downloadText").style.color = defaultColor;
     document.getElementById("add2down").style.color = defaultColor;
 }
@@ -83,8 +81,6 @@ function close() {
     document.getElementById("downloadText").style = "color: #00000000;"
     document.getElementById("add2down").style = "color: #00000000;"
     document.getElementById("myNav").style.width = "0%";
-    // setTimeout('document.getElementById("downloadText").style.color = defaultColor', 500);
-    // document.getElementById("downloadText").style.color = defaultColor;
 }
 
 function slidePanel() {
@@ -98,7 +94,6 @@ function slidePanel() {
 }
 
 function download() {
-
     if (items.length > 0) {
             
         // Creation/writing
