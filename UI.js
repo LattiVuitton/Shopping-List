@@ -37,7 +37,9 @@ function createItem() {
         const newP = document.createElement('p');
         newP.innerHTML = text + "";
         newP.className = "ingredient"
-        itemsList.append(newP);
+
+
+        itemsList.prepend(newP);
         
         var scroller = document.getElementById("items");
         scroller.scrollTop = scroller.scrollHeight;
