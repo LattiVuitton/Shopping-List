@@ -158,12 +158,6 @@ function download() {
     }
 }
 
-function swipeLeft() {
-    if (panelOpen){
-        slidePanel();
-    }
-}
-
 let xDown = null;
 let yDown = null;
 
@@ -187,11 +181,19 @@ function handleTouchMove(event) {
   let yDiff = yDown - yUp;
 
   if (Math.abs(xDiff) > Math.abs(yDiff)) {
-    if (xDiff > 5) {
-        swipeLeft();
+    if (xDiff > 6) {
+        if (panelOpen){
+            slidePanel();
+        }
+    }
+    else if (xDiff < -6){
+        if (!panelOpen){
+            slidePanel();
+        }
     }
   }
 
+  // Reset values
   xDown = null;
   yDown = null;
 }
