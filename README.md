@@ -1,4 +1,6 @@
-#Shopping List Maker
+**Shopping List Maker**
+
+Check it out here: "[Shopping List Maker]""(https://lattivuitton.github.io/Shopping-List/)"
 
 Shopping List Maker is a web application that allows users to create and manage their shopping lists online. It has a simple and user-friendly interface that allows users to quickly add and remove items from their list.
 
